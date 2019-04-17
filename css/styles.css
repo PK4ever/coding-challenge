@@ -1,17 +1,38 @@
-#loginMsg.loginMsgFail{
+#loginMsg {
+	width: 60%;
+	margin: auto;
+}
+#loginMsg.loginMsgFail {
 	background-color: #a944426b;
 	color: red;
 }
-#loginMsg.loginMsgSuccess{
+#loginMsg.loginMsgSuccess {
 	background-color: #d9f3f7b5;
 	color: green;
 }
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
-#account_details_left{
+#account_details_left {
 	border-right: 1px solid lightgray;
 }
-.details{
+.details {
 	margin-top: 20px;
+}
+#brand {
+	color: white;
+}
+#loginContainer {
+	width: 60%;
+}
+#homePanel {
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+}
+hr {
+	width: 20%
+}
+#greeting {
+	color: lightgray;
 }
