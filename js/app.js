@@ -35,6 +35,8 @@ $(document).ready(function() {
 	//load login page when page firts loads/refreshes
 	if (LOGGED_IN) {
 		goToHome();
+		toggle_login_logout_text("logout");
+		toggleActiveMenuItem($('#home'));
 	}else{
 		$('#content').empty().append(LOGIN_HTML);
 	}
