@@ -9,6 +9,6 @@ username & password.
 ###### git clone git@github.com:PK4ever/coding-challenge.git
 ###### open the project in your text editor and enjoy!! :)
 
-###Testing
+#Testing
 ###### To test the project open the index.html file in any browswer
 ###### login credentials -------      email: sincere@april.biz -------      password: pass           ------------

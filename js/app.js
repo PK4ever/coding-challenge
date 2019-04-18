@@ -23,9 +23,21 @@ const LOGIN_HTML = $(`<div class="container" id="loginContainer">
 						</div>`);
 //@LOGGED_IN a flag that keeps track of the user's login status
 let LOGGED_IN = false;
+
 $(document).ready(function() {
+	if(sessionStorage.getItem("status") === null){
+		sessionStorage.setItem("log_in_status", "false");
+	}
+
+	let SESSION_LOG_IN_STATUS = (sessionStorage.getItem("log_in_status") == "true");
+	LOGGED_IN = SESSION_LOG_IN_STATUS;
+
 	//load login page when page firts loads/refreshes
-	$('#content').empty().append(LOGIN_HTML);
+	if (LOGGED_IN) {
+		goToHome();
+	}else{
+		$('#content').empty().append(LOGIN_HTML);
+	}
 	//home nav item item click listener 
 	$('#home').on('click', function() {
 		if (LOGGED_IN) {
@@ -49,6 +61,7 @@ $(document).ready(function() {
 	$('#login').on('click', function(event) {
 		if (LOGGED_IN) {
 			LOGGED_IN = false;
+			sessionStorage.setItem("log_in_status","false");
 			toggleActiveMenuItem(this);
 			logOut();
 		}
@@ -59,6 +72,8 @@ $(document).ready(function() {
 		toggle_login_logout_text("login");
 		$('#content').empty().append(LOGIN_HTML);
 		displayLoginMsg("You are logged out.", true);
+		sessionStorage.setItem("log_in_status", "false");
+		LOGGED_IN = false;
 		clearForm();
 	}
 	//redirects to home page
@@ -116,6 +131,7 @@ $(document).ready(function() {
 			$("#loginMsg").addClass("hidden");
 			$("#loginMsg").removeClass("loginMsgFail");
 			LOGGED_IN = true;
+			sessionStorage.setItem("log_in_status","true");
 			goToHome();
 			displayLoginMsg("Successfull login.", true);
 			toggle_login_logout_text("logout");
