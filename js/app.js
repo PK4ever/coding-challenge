@@ -25,7 +25,7 @@ const LOGIN_HTML = $(`<div class="container" id="loginContainer">
 let LOGGED_IN = false;
 
 $(document).ready(function() {
-	if(sessionStorage.getItem("status") === null){
+	if(sessionStorage.getItem("log_in_status") === null){
 		sessionStorage.setItem("log_in_status", "false");
 	}
 
